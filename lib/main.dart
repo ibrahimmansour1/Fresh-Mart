@@ -1,13 +1,15 @@
 import 'package:e_commerce/core/routes/app_router.dart';
 import 'package:e_commerce/core/routes/app_routes.dart';
+import 'package:e_commerce/core/services/shared_preferences_singleton.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'generated/l10n.dart';
 
-void main() {
+void main() async {
   WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
   // FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
+  await Prefs.init();
   runApp(const MyApp());
 }
 

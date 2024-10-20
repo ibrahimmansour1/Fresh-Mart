@@ -1,4 +1,6 @@
+import 'package:e_commerce/constants.dart';
 import 'package:e_commerce/core/routes/app_routes.dart';
+import 'package:e_commerce/core/services/shared_preferences_singleton.dart';
 import 'package:e_commerce/core/utils/app_colors.dart';
 import 'package:e_commerce/core/utils/widgets/custom_button.dart';
 import 'package:e_commerce/features/onboarding/views/widgets/onboarding_page_view.dart';
@@ -61,6 +63,7 @@ class _OnboardingViewState extends State<OnboardingView> {
                 padding: const EdgeInsets.symmetric(horizontal: 16.0),
                 child: CustomButton(
                   onPressed: () {
+                    Prefs.setBool(kIsOnBoardingViewSeen, true);
                     Navigator.of(context).pushReplacementNamed(AppRoutes.login);
                   },
                   text: "ابدأ الآن",
